@@ -1,3 +1,3 @@
 <?php
-    echo "<h2> Thankyou for your review! </h2>"
+    echo "<h2> Thankyou for taking up the Personality Test! </h2>"
 ?>

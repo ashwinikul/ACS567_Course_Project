@@ -1,12 +1,12 @@
 <?php
     function connect_to_db()
     {
-        define("USER", "sinanal");
+        define("USER", "alhas01");
         define("PASS", "");
-        define("DB", "acs567_db");
+        define("DB", "Know_Thyself");
     
         // connect to database
-        $connection = new mysqli('127.0.0.1', USER, PASS, DB);
+        $connection = new mysqli('localhost', USER, PASS, DB);
     
         if ($connection->connect_error) {
             die('Connect Error (' . $connection->connect_errno . ') '
