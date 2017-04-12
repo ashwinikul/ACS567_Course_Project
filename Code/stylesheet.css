@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    color: #80c0c0
+    color: black;
 }
 .topmenu {
     list-style-type: none;
@@ -64,4 +64,19 @@ body {
     top: 0px;
     opacity: 0;
     visibility: hidden;
+}
+#pageContent {
+	margin-top:20px;
+	border:1px dashed #cccccc;
+	padding:10px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+h2 {
+    color: Navy;
+}
+h3 {
+    color: Blue;
 }
