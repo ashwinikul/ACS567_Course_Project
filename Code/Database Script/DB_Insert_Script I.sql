@@ -28,10 +28,10 @@ INSERT INTO Dim_Question ( testid, qus_desc, qus_type) values (1,'In approaching
 
 INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (1,1,2,'Interact with many, including strangers','Interact with a few, known to you');
 INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (2,1,2,'Realistic than speculative','Speculative than realistic');
-INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (3,1,2,'Have your “head in the clouds”','Be “in a rut”');
+INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (3,1,2,'Have your "head in the clouds"','Be "in a rut"');
 INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (4,1,2,'Principles','Emotions');
 INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (5,1,2,'Convincing','Touching');
-INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (6,1,2,'To deadlines','Just “whenever”');
+INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (6,1,2,'To deadlines','Just "whenever"');
 INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (7,1,2,'Rather carefully','Somewhat impulsively');
 INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (8,1,2,'Stay late, with increasing energy','Leave early with decreased energy');
 INSERT INTO Dim_Qus_Option ( qusid, testid, tot_col, op1 , op2 ) values (9,1,2,'Sensible people','Imaginative people');

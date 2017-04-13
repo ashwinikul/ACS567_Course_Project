@@ -10,7 +10,7 @@
         <body>
             <ul class="topmenu">
               <li><a href="home.html">About MBTI</a>
-              <li><a href="assessment.html">Assessment</a></li>
+              <li><a href="assessment.html" data-target="index1" class="tagline">Assessment</a></li>
               <li><a href="questionnaire.html">Questionnaire</a></li>
               <li class="firstList"><a href="16personality.html">16 Personality Types</a>
                 <ul class="dropdown">
@@ -55,5 +55,16 @@
             <a id="none" href="#">About MBTI</a>   
             </div>
               
+		
+            <p>Assessment</p>           
+            <a id="none" href="#">About MBTI</a>   
+            <div id="content1">
+              <?php include('index1.php'); ?>
+              <?php include('submit_asmt.php'); ?> 
+            </div>
+            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+            <script src="site.js"></script>
+            </div>
         </body>
 </html>
