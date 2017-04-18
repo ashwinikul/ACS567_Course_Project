@@ -1,0 +1,41 @@
+.slide {
+    text-indent: 15em; 
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#items {
+    padding-left: 10em;
+}
+
+.bind-answer {
+    text-indent: 10em; 
+}
+
+textarea#styled {
+	width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+
+}
+
+.chosen-select {
+    font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #444;
+    padding: 0 0 0 8px;
+    letter-spacing: .01rem;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    background-clip: padding-box;
+    background-color: rgb(220,220,220);
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    border: 1px solid #5897fb;
+    border-radius: 4px;
+    height: 26px;
+    line-height: 26px;
+}
