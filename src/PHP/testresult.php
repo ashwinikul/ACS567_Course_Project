@@ -1,3 +1,9 @@
+/* Developer: Ashwini Kulkanri 
+ Description: This is a temporary result display page for after submitting MBTI assessment  
+   
+ Version History: 1.0 (Sprint 2)
+ */
+
 <?php
     require_once('db_conn.php');
     session_start(); // session start
