@@ -24,7 +24,7 @@
 				
         }
         
-	// Updated <19 Jul 2017> Setting up session variables
+	// Updated <19 APR 2017> Setting up session variables
 	session_start(); // session start
         $_SESSION['s_testid']=$s_testid ;    
 	    
