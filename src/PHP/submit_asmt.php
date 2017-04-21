@@ -19,7 +19,7 @@
                     $newUser = $currentUser[0]+1;
 		    
 		    $email ="ash.kulkarni1990@gmail.com"; // Need to update this code as of noe its hardcoded
-		    // Updated <19 Jul 2017> Setting up session variables
+		    // Updated <19 APR 2017> Setting up session variables
 		    session_start(); // session start
                     $_SESSION['s_userid']=$newUser ;
                     $_SESSION['s_emailid']=$email ;
@@ -64,7 +64,7 @@
                               
                             mysqli_commit($connection);
                         }
-			   // Updated <19 Jul 2017> Making entry in DB which will trigger the calculation  :Start
+			   // Updated <19 APR 2017> Making entry in DB which will trigger the calculation  :Start
 			    $insert_entry =  sprintf("INSERT INTO TestDetails (testid, userid, created_date) VALUES
                                                  ('".htmlspecialchars($testid,ENT_QUOTES)."','".htmlspecialchars($newUser,ENT_QUOTES)."', now());
                                                     ");
@@ -74,7 +74,7 @@
 				    die("Assessment details not inserted into database");
                               
                             mysqli_commit($connection);
-			  // Updated <19 Jul 2017> Making entry in DB which will trigger the calculation   :End
+			  // Updated <19 APR 2017> Making entry in DB which will trigger the calculation   :End
                     }
                 mysqli_close($connection);
             }
@@ -89,7 +89,7 @@
             if($sucess === true)
             {
                 //header("Location: confirmation.php");
-		// Updated <19 Jul 2017> 
+		// Updated <19 APR 2017> 
 		header("Location: result.html");    
                 exit;
                 
