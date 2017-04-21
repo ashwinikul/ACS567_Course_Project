@@ -12,7 +12,7 @@
         $connection = connect_to_db();
         
         // prepare SQL
-	//updated <19 Jul 2017 >    added condition DT.testname='MBTI'   
+	//updated <19 APR 2017 >    added condition DT.testname='MBTI'   
         $sql = sprintf("SELECT DQ.qusid, DT.Testid, DQ.qus_desc, OPT.op1, OPT.op2
                             From Dim_Question DQ
                             INNER JOIN  Dim_Test DT ON DQ.testid= DT.testid
