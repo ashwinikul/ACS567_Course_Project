@@ -10,7 +10,7 @@ Insert into UserDetails (email_addr, created_date) values (LTRIM( RTRIM( emailid
 
 select userid from UserDetails  where email_addr=LTRIM(RTRIM($email ),
 then save session variable:
-
+session_start(); // session start
 $_SESSION['s_emailid']=$email ;
 $_SESSION['userid']=$userid ;
 
