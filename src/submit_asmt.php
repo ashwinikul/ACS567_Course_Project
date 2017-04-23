@@ -9,21 +9,16 @@
     function submit_asmt()
         {
             try {
+                    echo "U r here";
                     $connection = connect_to_db();
 
                     // prepare SQL
-                    $sql = sprintf("SELECT max(userid) FROM UserDetails;"); // Need to update this code
+                    $sql = sprintf("SELECT max(userid) FROM UserDetails;");
 
                     $result = $connection->query($sql) or die(mysqli_error()); 
                     $currentUser = mysqli_fetch_row($result);
                     $newUser = $currentUser[0]+1;
-		    
-		    $email ="ash.kulkarni1990@gmail.com"; // Need to update this code as of noe its hardcoded
-		    // Updated <19 APR 2017> Setting up session variables
-		    session_start(); // session start
-                    $_SESSION['s_userid']=$newUser ;
-                    $_SESSION['s_emailid']=$email ;
-		    
+
                     mysqli_autocommit($connection,FALSE);
                    
                     $insert_usr = sprintf("INSERT INTO UserDetails (created_date) VALUES (NOW());
@@ -64,17 +59,6 @@
                               
                             mysqli_commit($connection);
                         }
-			   // Updated <19 APR 2017> Making entry in DB which will trigger the calculation  :Start
-			    $insert_entry =  sprintf("INSERT INTO TestDetails (testid, userid, created_date) VALUES
-                                                 ('".htmlspecialchars($testid,ENT_QUOTES)."','".htmlspecialchars($newUser,ENT_QUOTES)."', now());
-                                                    ");
-                            $sucess = $connection->query($insert_entry) or die(mysqli_error($connection)); 
-                          
-                            if ($sucess === false)
-				    die("Assessment details not inserted into database");
-                              
-                            mysqli_commit($connection);
-			  // Updated <19 APR 2017> Making entry in DB which will trigger the calculation   :End
                     }
                 mysqli_close($connection);
             }
@@ -88,9 +72,7 @@
             //if($sucess === true && $error === false)
             if($sucess === true)
             {
-                //header("Location: confirmation.php");
-		// Updated <19 APR 2017> 
-		header("Location: result.html");    
+                header("Location: confirmation.php");
                 exit;
                 
             }

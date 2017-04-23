@@ -18,16 +18,9 @@
         // check whether we found a row
         $array = array();
         while ($row =  $result->fetch_assoc()) {
-		$array[] = $row;
-	    	// Updated <19 Jul 2017>
-		$s_testid = $row['Testid'] ;
-				
+            $array[] = $row;
         }
         
-	// Updated <19 APR 2017> Setting up session variables
-	session_start(); // session start
-        $_SESSION['s_testid']=$s_testid ;    
-	    
         $itemcount = 0;
                 echo "<script>disableSubmit();</script>";
         echo "<div id='set0'";
@@ -67,7 +60,6 @@
         	else if ($itemcount % 5 == 0)
             {
                 echo "</div>";
-        		//echo "<p class='slide' >";
         		echo "<p id='slide' style='text-indent: 10em;'>";
                 echo "<input type='button' id='next".$divCnt."' name='next' value='Next' onclick='nextButton(".++$divCnt.")' />"."<br><br>";
                 echo "<script>hideSet(" .$divCnt. ");</script>";
@@ -81,7 +73,7 @@
     }
         if(isset($_POST["SubmitAsmt"]))
         {
-            submit_asmt();
+            submit_asmt($_POST['testid']);
         }
         
         if(isset($_POST["previous"]))
@@ -93,3 +85,4 @@
 	        echo "</script>";
         }
 ?>
+
