@@ -67,3 +67,80 @@ $(".chosen-select").change(function(){
     }
     i=1;
 });
+
+
+//Function for submitting custom Questionaire
+function submitAsses(str) {
+    
+    var options = new Array();
+    
+    var testname = document.getElementById("txtAssessName").value;
+    var questdesc = document.getElementById("txtEnterQ").value;
+    var ansoption = document.getElementsByClassName("options");
+    var selections = document.getElementsByClassName("selection");
+    var correctAnswer = "";
+    
+        for(var i = 0; i < ansoption.length; i++)
+        {
+            options.push(ansoption.item(i).value);
+            if(selections[i].checked) {
+                correctAnswer = ansoption.item(i).value;
+            }
+            else {
+                alert("Choose a radio button that represents a correct choice");
+                event.preventdefault();
+            }
+        }
+
+    var control = document.getElementById("styled");
+    
+    if (control.value == '' || control.value== null) {
+        alert("Enter value for all fields!!");
+        event.preventdefault();
+    }
+    
+    else {
+        var str = "testname="+testname+"&questdesc="+ questdesc + "&options=" + options+"&correctAnswer="+correctAnswer;
+        chkAssessName(str);
+       //alert("Values saved to DB!!");
+      // alert("Proceed to add more questions!!");
+       document.getElementById("txtEnterQ").value = "";
+        event.preventdefault();
+    }
+}
+
+//AJAX Call for checking if the Testname already exists in DB 
+
+// Reusing AJAX for submitting values to DB
+
+var xmlhttp = null;
+function chkAssessName(str) {
+    if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        
+        if(!str.includes("options")) {
+            var str = "testname="+str;
+        }
+
+        xmlhttp.open("POST","getassessName.php",true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.setRequestHeader("Content-length", str.length);
+        xmlhttp.setRequestHeader("Connection", "close");
+        xmlhttp.send(str);
+}
+}
