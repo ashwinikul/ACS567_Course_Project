@@ -35,7 +35,7 @@
                     if ($sucess === false)
                         die("User not inserted into database");
                     
-                    mysqli_commit($connection);
+                    //mysqli_commit($connection);
                     
                      /*                        
                     $insert_usr = sprintf("INSERT INTO UserDetails (userid , created_date) VALUES ('".htmlspecialchars($newUser, ENT_QUOTES)."', NOW());
@@ -48,7 +48,7 @@
                     
                     if (is_array($original_array)) {
                         
-                        for ($row = 1; $row < 43; $row++) {
+                        for ($row = 1; $row < $_POST['sizeOfQSet'] + 1; $row++) {
                                 $testid = $original_array[$row][0];
                                 $qusid = $original_array[$row][1];
                                 $ans = $_POST['selection_'.$qusid];
@@ -58,9 +58,9 @@
                                                     ");
                             
                             // execute query
-                            $sucess = $connection->query($insert) or die(mysqli_error($connection));  
+                            $ins_sucess = $connection->query($insert) or die(mysqli_error($connection));  
                                 
-                            if ($sucess === false)
+                            if ($ins_sucess === false)
                                 die("Assessment details not inserted into database");
                               
                             mysqli_commit($connection);
@@ -88,7 +88,7 @@
             }
                 
             //if($sucess === true && $error === false)
-            if($sucess === true)
+            if($ins_sucess === true)
             {
                 //header("Location: confirmation.php");
 		// Updated <19 APR 2017> 

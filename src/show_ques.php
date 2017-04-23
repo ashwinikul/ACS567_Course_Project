@@ -28,16 +28,18 @@
         
         $itemcount = 0;
                 echo "<script>disableSubmit();</script>";
+		echo "<script>funcsizeofQSet(".sizeof($array).");</script>";																															  
         echo "<div id='set0'";
 
         
+		$itemno=1;		  
         foreach ($array as $innerArray)
         {
         	foreach ($innerArray as $key => $value)
         	{
         		if ($key === 'qusid')
         		{
-        		    echo "<br><li>" .$innerArray['qusid']. ". " . $innerArray['qus_desc'] . "</li><br><br>";
+        		    echo "<br><li>" .$itemno++. ". " . $innerArray['qus_desc'] . "</li><br><br>";
         		    echo "<div>";
                     echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='1' onclick='answeredCounter()'>" . $innerArray['op1'] ."<br>";
                     echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='2' onclick='answeredCounter()'>" . $innerArray['op2'] ."<br>";
@@ -59,6 +61,7 @@
         	if ($itemcount == sizeof($array))
             {
                 echo "<p style='text-indent: 10em;  margin: 0;'>";
+				echo "<input type='hidden' name='sizeOfQSet' value='".sizeof($array)."'>";						  
                 echo "<input type='submit' name='SubmitAsmt' value='Submit Assessment' data-target='submit_asmt' id='button' />\n";
             }
                 

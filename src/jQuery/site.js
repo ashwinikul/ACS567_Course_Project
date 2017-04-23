@@ -4,6 +4,8 @@
 
 */
 var i=0;
+//global sizeOfQSet
+var sizeOfQSet=0;				 
 $(".tagline").click(function() {
     
     var container = $('#content1');
@@ -26,9 +28,12 @@ $(".toggle").click(function() {
 
 var ansCnt=0;
 
+function funcsizeofQSet(size){
+    sizeOfQSet=size;
+}							  
 function answeredCounter() {
     ansCnt++;
-    if(ansCnt>=42){
+    if(ansCnt>=sizeOfQSet){
          document.getElementById("button").disabled="";
     }
     else{
@@ -55,6 +60,7 @@ function createQuestion() {
 
 }
 
+
 $(".chosen-select").change(function(){
     var optionCount = $(this).val().charAt(0);
     var binddiv = $(this).next("div.bind-answer");
@@ -62,57 +68,77 @@ $(".chosen-select").change(function(){
     binddiv.empty();
     for (i=1; i <= optionCount; i++) {
         var txt1 = "<br><br>";               // Create element with HTML  
-        var txt2 = "<textarea id='styled' name='styled"+i+"' placeholder='Enter answer choice "+i+"' style='height: 20px;' />"; 
-        binddiv.append(txt1,txt2);
+        var txt2 = "<textarea id='styled' class='options' name='styled"+i+"' title='Choose a radio button to select the correct answer' placeholder='Enter answer choice "+i+"' style='height: 20px;' />&nbsp;";
+        var txt3 = "<input type='radio' class='selection' name='selection' <?php if ((isset($_POST['selection']))) echo 'checked'; ?> ";
+        binddiv.append(txt1,txt2,txt3);
     }
+    var txt4 = "<br><input type='submit' name='Submit' value='Submit' onclick='submitAsses();' style='position: relative; right: 5px; top: 15px;' /><br><br>";
+    binddiv.append(txt4);
     i=1;
-});
+});									  
+											 
 
-
-//Function for submitting custom Questionaire
+//Function for submitting custom Questionaire											 
 function submitAsses(str) {
-    
+	
     var options = new Array();
+    var correctAnswer = "";
     
     var testname = document.getElementById("txtAssessName").value;
     var questdesc = document.getElementById("txtEnterQ").value;
     var ansoption = document.getElementsByClassName("options");
     var selections = document.getElementsByClassName("selection");
-    var correctAnswer = "";
-    
-        for(var i = 0; i < ansoption.length; i++)
-        {
-            options.push(ansoption.item(i).value);
-            if(selections[i].checked) {
-                correctAnswer = ansoption.item(i).value;
-            }
-            else {
-                alert("Choose a radio button that represents a correct choice");
-                event.preventdefault();
-            }
-        }
-
     var control = document.getElementById("styled");
     
-    if (control.value == '' || control.value== null) {
+    if ((questdesc == '' || questdesc == null) || (control.value == '' || control.value== null)) {
         alert("Enter value for all fields!!");
         event.preventdefault();
     }
     
+    for(var i = 0; i < ansoption.length; i++) {
+		 
+            options.push(ansoption.item(i).value);
+            if(selections[i].checked) {
+                correctAnswer = ansoption.item(i).value;
+            }
+				  
+																				
+									   
+			 
+        }
+
+    if(correctAnswer== null || correctAnswer.length == 0) {
+                alert("Choose a radio button that represents a correct choice");
+													  
+											  
+							   
+    }
+    
     else {
         var str = "testname="+testname+"&questdesc="+ questdesc + "&options=" + options+"&correctAnswer="+correctAnswer;
+        for(var j = 0; j < ansoption.length; j++)
+        {
+            ansoption.item(j).value = "";
+        }
+        
         chkAssessName(str);
-       //alert("Values saved to DB!!");
-      // alert("Proceed to add more questions!!");
-       document.getElementById("txtEnterQ").value = "";
-        event.preventdefault();
+        
+        //Clearing the controls after submit
+        control.value = "";
+        document.getElementById("txtEnterQ").value = "";
+							   
     }
+        event.preventdefault();
 }
+
+							   
+
+
+
 
 //AJAX Call for checking if the Testname already exists in DB 
 
 // Reusing AJAX for submitting values to DB
-
 var xmlhttp = null;
 function chkAssessName(str) {
     if (str == "") {
@@ -144,3 +170,4 @@ function chkAssessName(str) {
         xmlhttp.send(str);
 }
 }
+
