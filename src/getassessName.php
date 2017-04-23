@@ -9,7 +9,7 @@
     require_once('submit_asmt.php');
             
     try {
-        
+        //$newUser = $_SESSION['s_userid'];
         $newUser = 2;
         $newtestid = [];
         
