@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Welcome to Know Thyself Website</title>
+        <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    </head> 
+        <body>
+            <ul class="topmenu">
+              <li><a href="home.html">About MBTI</a>
+              <li><a href="assessment.html" data-target="index1" class="tagline">Assessment</a></li>
+              <li><a href="questionnaire.html">Questionnaire</a></li>
+              <li class="firstList"><a href="16personality.html">16 Personality Types</a>
+                <ul class="dropdown">
+                  <li id="click" class="list firstList"><a href="16personality.html">Guardian</a>
+                      <ul class="dropdown">
+              					<li class="list"><a href="16personality.html">ESTJ - "The Supervisors"</a></li>
+              					<li class="list"><a href="16personality.html">ISTJ - "The Inspectors"</a></li>
+              					<li class="list"><a href="16personality.html">ESFJ - "The Providers"</a></li>
+              					<li class="list"><a href="16personality.html">ISFJ - "The Protectors"</a></li>
+				              </ul>
+				          </li>
+				          <li class="list firstList"><a href="16personality.html">Rational</a>
+                      <ul class="dropdown">
+              					<li class="list"><a href="16personality.html">ENTJ - "The Fieldmarshals</a></li>
+              					<li class="list"><a href="16personality.html">INTJ - "The Masterminds"</a></li>
+              					<li class="list"><a href="16personality.html">ENTP - "The Inventors"</a></li>
+              					<li class="list"><a href="16personality.html">INTP - "The Architects"</a></li>
+          				    </ul>
+          				</li>    
+				          <li class="list firstList"><a href="16personality.html">Idealist</a>
+                      <ul class="dropdown">
+              					<li class="list"><a href="16personality.html">ENFJ - "The Teachers"</a></li>
+              					<li class="list"><a href="16personality.html">INFJ - "The Counselors"</a></li>
+              					<li class="list"><a href="16personality.html">ENFP - "The Champions"</a></li>
+              					<li class="list"><a href="16personality.html">INFP - "The Healers"</a></li>
+          				    </ul>
+          				</li>
+				          <li class="list firstList"><a href="16personality.html">Artisan</a>
+                      <ul class="dropdown">
+              					<li class="list"><a href="16personality.html">ESTP - "The Promoters"</a></li>
+              					<li class="list"><a href="16personality.html">ISTP - "The Crafters"</a></li>
+              					<li class="list"><a href="16personality.html">ESFP - "The Performers"</a></li>
+              					<li class="list"><a href="16personality.html">ISFP - "The Composers"</a></li>
+          				    </ul>
+          				</li>
+          			</ul>	
+              </li>
+            </ul>
+            
+            <form name="contactform" method="post" action="email_function.php">
+                  <table width="450px">
+                  <tr>
+                   <td valign="top"><label for="first_name">First Name</label></td>
+                   <td valign="top"><input  type="text" name="first_name" maxlength="50" size="30"></td>
+                  </tr>
+                  <tr>
+                   <td valign="top""><label for="last_name">Last Name</label></td>
+                   <td valign="top"><input  type="text" name="last_name" maxlength="50" size="30"></td>
+                  </tr>
+                  <tr>
+                  <td valign="top"><label for="email">Email Address</label></td>
+                   <td valign="top"><input  type="text" name="email" maxlength="80" size="30"></td>
+                  </tr>
+                  <tr>
+                   <td colspan="2" style="text-align:center">
+                    <input type="submit" value="Submit">
+                   </td>
+                  </tr>
+                  </table>
+            </form>
+
+            
+	
+            <div id="content1"> 
+              <?php include("../../PHP/index1.php"); ?>
+              <?php include("../../PHP/submit_asmt.php"); ?>
+            <p>fhh</p></div> 
+            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+            <script src="../jQuery/site.js"></script>
+            </div>
+        </body>
+</html> 
