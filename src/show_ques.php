@@ -19,7 +19,12 @@
         $array = array();
         while ($row =  $result->fetch_assoc()) {
             $array[] = $row;
+	    // Updated <19 Jul 2017>
+	    $s_testid = $row['Testid'] ;
         }
+	// Updated <19 APR 2017> Setting up session variables
+	session_start(); // session start
+        $_SESSION['s_testid']=$s_testid ;   
         
         $itemcount = 0;
                 echo "<script>disableSubmit();</script>";
