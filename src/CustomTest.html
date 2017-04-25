@@ -10,10 +10,10 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     
-    <!-- Custom CSS FIX ?? -->
-    <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+    <!-- Custom CSS FIX ?? 
+    <link type="text/css" href="css/stylesheet.css" rel="stylesheet">-->
 
-	 <link rel="stylesheet" href="css/main.css">
+	  <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/custom.css" >
 	
 	  <script src="//use.edgefonts.net/bebas-neue.js"></script>
@@ -28,7 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   </head> 
         
-  <body>
+  <body onload="phpLoad2();" background="images/result.gif" class = "result">>
     <!--/header navigation bar-->
     <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
         <div class="container">
@@ -45,11 +45,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="home.html">About MBTI</a></li>
                     <li><a href="assessment.html">Assessment</a></li>
-                    <li class="active"><a href="questionnaire.html">Questionnaire</a></li>
-                    <li><a href="CustomTest.html">Custom Assessments</a></li>
+                     <li><a href="questionnaire.html">Questionnaire</a></li>
+                    <li class="active"><a href="CustomTest.html">Custom Assessment</a></li>
                     <li><a href="16personality.html">16 Personality Types</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Dropdown Menu 1</a></li>
                             <li><a href="#">Dropdown Menu 2</a></li>
@@ -108,83 +107,38 @@
           			</ul>	
               </li>
             </ul>--> 
-            
+        
+  
         <!-- Page Title -->
 		<div class="section section-breadcrumbs">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1>Custom Questionnaire</h1>
+						<h1>Custom Assessments</h1>
 					</div>
 				</div>
 			</div>
 		</div>
-        <!-- Page Information - Custom Questionnaire-->
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-				    <div class="col-sm-12">
-						<h2>Upload Your Custom Questionnaire! </h2>
-						<h3>Custom Questionnaire Instruction</h3>
-						<p>
-						    <ul>
-						        <li>Enter a name for your assessment</il>
-						        <li>Enter a description for your question</il>
-						        <li>select the number of options you would like to have.</il>
-						        <li>Enter a description for your question</il>
-						        <li>Mark one among them as the correct answer.</il>
-						        <li>Use the 'Submit' button to save your results. Continue if you want to add a new question</il>
-						    </ul>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 
-        <!-- Page Information - Assessment Form -- button class="form-control btn btn-login"-->
+        <!-- Page Information - MBTI Graphical Result-->
         <div class="section">
 	    	<div class="container">
 				<div class="row">
 				    <div class="col-sm-12">
-				        <div id="start" class= "obutton feature2">
-                            <button class="tagline form-control btn btn-login"  data-target="index1" onclick="createQuestion()">Create Assessment</button>
-                        </div>
+						<h2>List of all available Assessments </h2>
+											
 					</div>
 				</div>
 			</div>
 		</div>
 
 <hr>
-        <!-- Page Information - Assessment Form -- button class="form-control btn btn-login"-->
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-				    <div class="col-sm-12">
-				        <div id="createQ" class= "obutton feature2" style="display:none">
-				            <div id="items" align='center' style='text-align:left'>
-				             <h2>You are here to create a custom questionnaire</h2>
-            				      <h4> Assessment Name
-                				      <input type="text" id="txtAssessName" onchange="chkAssessName(this.value)"></input>
-                				      <div id="txtHint"><b>...</b></div><br>
-            				      </h4>
-            				      <textarea id="txtEnterQ" placeholder="Enter your question here.." cols="30" rows="5"></textarea><br><br>
-                                    <select id="test" class="chosen-select" data-placeholder="Choose the number of answer choices...">
-                                    	<option selected="selected">Choose the number of answer choices... </option>
-                                    	<option> 2 - Options </option>
-                                    	<option> 3 - Options </option>
-                                    	<option> 4 - Options </option>
-                                    	<option> 5 - Options </option>
-                                    </select>
-                                <div class='bind-answer' style='position: relative;'></div>
-                            </div>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-            
-
+            <!-- Developed by Ashwani -->
+            <div  id="res" data-target="cstomTest" onload="phpLoad2();" >
+              <?php include('cstomTest.php'); ?>
+            </div> 
+            <!-- Developed by Ashwani -->
 <!-- 
 <?php
 session_start();
@@ -242,7 +196,7 @@ if(isset($_POST['bookID']))
           <!-- Sindu JavaScript -->
             <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
             <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-            <script src="jQuery/site.js"></script>
+            <script src="jQuery/phpload.js"></script>
   </body>
 </html> 
 
