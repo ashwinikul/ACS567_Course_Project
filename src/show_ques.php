@@ -1,9 +1,7 @@
-/* 
-	Developer: Sindhu Balakrishnan
-	Description: PHP page for displaying MBTI questionnaire. 
-
-*/
 <?php
+//	Developer: Sindhu Balakrishnan
+//	Description: PHP file to show a questionnaire on the Know Thyself application
+
    require_once('submit_asmt.php');
 
     function show_ques($sql, $connection)
@@ -22,8 +20,8 @@
 	    // Updated <19 Jul 2017>
 	    $s_testid = $row['Testid'] ;
         }
-	// Updated <19 APR 2017> Setting up session variables
-	session_start(); // session start
+	    // Updated <19 APR 2017> Setting up session variables
+	    session_start(); // session start
         $_SESSION['s_testid']=$s_testid ;   
         
         $itemcount = 0;
@@ -39,7 +37,8 @@
         	{
         		if ($key === 'qusid')
         		{
-        		    echo "<br><li>" .$itemno++. ". " . $innerArray['qus_desc'] . "</li><br><br>";
+        		    echo "<br><li> " . $innerArray['qus_desc'] . "</li><br>";
+        		    //echo "<br><li>" .$itemno++. ". " . $innerArray['qus_desc'] . "</li><br><br>";
         		    echo "<div>";
                     echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='1' onclick='answeredCounter()'>" . $innerArray['op1'] ."<br>";
                     echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='2' onclick='answeredCounter()'>" . $innerArray['op2'] ."<br>";
@@ -64,7 +63,7 @@
 				echo "<input type='hidden' name='sizeOfQSet' value='".sizeof($array)."'>";						  
                 echo "<input type='submit' name='SubmitAsmt' value='Submit Assessment' data-target='submit_asmt' id='button' />\n";
             }
-                
+                 
         	else if ($itemcount % 5 == 0)
             {
                 echo "</div>";
@@ -81,7 +80,11 @@
     }
         if(isset($_POST["SubmitAsmt"]))
         {
+            echo "U r here";
+            
+            
             submit_asmt($_POST['testid']);
+
         }
         
         if(isset($_POST["previous"]))
