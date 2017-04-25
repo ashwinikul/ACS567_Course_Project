@@ -1,12 +1,10 @@
-/* 
-	Developer: Sindhu Balakrishnan
-	Description: PHP page for DB connection. 
-
-*/
 <?php
+//	Developer: Sindhu Balakrishnan
+//	Description: PHP page for DB connection. 
+
     function connect_to_db()
     {
-        define("USER", "alhas01");
+        define("USER", "sinanal");
         define("PASS", "");
         define("DB", "Know_Thyself");
     

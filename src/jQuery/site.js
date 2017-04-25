@@ -3,9 +3,20 @@
 	Description: Javascript/jQuery script file for MBTI and Custom Questionaire. 
 
 */
-var i=0;
 //global sizeOfQSet
 var sizeOfQSet=0;				 
+var i=0;
+
+function Test() {
+     $("#TestDescription1").show();
+}
+
+function showMBTI() {
+    $("#content1").show();
+    var container = $('#content1');
+    container.load('index1.php');
+}
+
 $(".tagline").click(function() {
     
     var container = $('#content1');

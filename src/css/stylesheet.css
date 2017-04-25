@@ -169,9 +169,13 @@ textarea#styled,#txtEnterQ {
     -webkit-border-radius: 6px 0 6px 6px;
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
+<<<<<<< HEAD
 }
 
 /*logo resize*/
 .navbar-brand {
 	padding: 0px 15px;
 }
+=======
+}
+>>>>>>> db942f8aafdcf23bc9d0d5c56b94a441adc87c33
