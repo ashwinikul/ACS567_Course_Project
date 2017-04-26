@@ -7,9 +7,6 @@
 var sizeOfQSet=0;				 
 var i=0;
 
-function Test() {
-     $("#TestDescription1").show();
-}
 
 function showMBTI() {
     $("#content1").show();

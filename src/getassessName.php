@@ -11,27 +11,25 @@
             
     try {
         $newtestid = [];
-        echo 'No of options is'.$_POST['ansoption'];
+
         $connection = connect_to_db();
         mysqli_autocommit($connection,FALSE);
             
             //Retriving the maximum test id available from DB to set ids for custom tests
-            //$sql = sprintf("SELECT testid FROM Dim_Test WHERE testname = '".$_POST['testname']."';
             $sql = sprintf("SELECT max(testid) FROM Dim_Test;
                                                     ");
-                //echo 'max testid from dim_test is '. $sql;
+
                 $result1 = $connection->query($sql) or die(mysqli_error()); 
                 $newtestid = mysqli_fetch_row($result1);
                 
             // prepare SQL to check if the Test name already exists in DB.
             if($_POST['options']==null) {
-                $sql = sprintf("SELECT testid FROM Dim_Test WHERE testname = '".$_POST['testname']."';
+                $sql = sprintf("SELECT testid FROM Dim_Test WHERE testname = '".htmlspecialchars($_POST['testname'],ENT_QUOTES)."';
                                                     ");
-                // echo 'select testid, taesname sql '.$sql;
+
                 $result = $connection->query($sql) or die(mysqli_error($connection)); 
                 $assessName = mysqli_fetch_row($result);
 
-                    //  echo 'value of accessName '.$assessName[0];
                     if (isset($assessName[0]) && !empty($assessName[0])) {
                         echo 'Questionaire with this name already exists in the DB. ';
                         echo 'Continue if you wish to add more questions to it';
@@ -41,7 +39,6 @@
                         
                         else {
                             $newtestid = $newtestid[0]+1;
-                            
                             // prepare SQL to insert the new Test name in DB.
                             $sql = sprintf("INSERT INTO Dim_Test (testid, userid, testname, created_date) 
                                         VALUES ($newtestid, $newUser, '".htmlspecialchars($_POST['testname'],ENT_QUOTES)."',now());");
@@ -53,9 +50,9 @@
                 //Insert into question table
                 $insert = sprintf("INSERT INTO Dim_Question (testid, qus_desc, qus_type, ans) VALUES 
                                                                     ($newtestid[0],
-                                                                    '".$_POST['questdesc']."',
-                                                                    '".$_POST['ansoption']."',
-                                                                    '".$_POST['correctAnswer']."') ;");
+                                                                    '".htmlspecialchars($_POST['questdesc'],ENT_QUOTES)."',
+                                                                    '".htmlspecialchars($_POST['ansoption'],ENT_QUOTES)."',
+                                                                    '".htmlspecialchars($_POST['correctAnswer'],ENT_QUOTES)."') ;");
                                                 
                 $sucess1 = $connection->query($insert) or die(mysqli_error($connection));  
                                       
@@ -63,7 +60,6 @@
                         
                     $op = $_POST['options'];
                     $arrayOptions = explode(",",$op);
-                    //echo $arrayOptions[0];
                                 
                     foreach($arrayOptions as $tmpChar) {
                         if ($tmpChar!='') {
@@ -75,9 +71,8 @@
                         
                 $result = $connection->query($sql) or die(mysqli_error()); 
                 $newqusid = mysqli_fetch_row($result);
-                // $newqusid[0] = $newqusid[0]+1;
                                 
-                //Insert into question table
+                //Insert into Answer Options table
                 $sql_op = sprintf("INSERT INTO Dim_Qus_Option (qusid,testid, tot_col, op1, op2, op3, op4, op5) 
                                                                     VALUES ($newqusid[0],
                                                                     $newtestid[0], 
@@ -89,7 +84,6 @@
                                                                     '".$arrayOptions[4]."'
                                                                                     ) ;");
                                                                                     
-                //  echo 'Does come into insert int dim_qus_option table '.$sql_op;
                 $sucess2 = $connection->query($sql_op) or die(mysqli_error($connection));      
                                         
                 if ($sucess2 === false){
@@ -97,9 +91,7 @@
                 } else {
                      echo 'Question entered into DB';
                     }
-                    
                 }
-                             
             }
                 
         mysqli_commit($connection);

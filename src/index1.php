@@ -20,25 +20,22 @@
     $currentUser = mysqli_fetch_row($result);
     $newUser = $currentUser[0]+1;
     
-    //Checking for existence of user id in session value.
-    if(!isset($_SESSION['s_userid']))
-    {
-        $_SESSION['s_userid']=$newUser ;
-    }
-    
-        if(!isset($_SESSION['s_testid']))
+    if(!isset($_SESSION['s_testid']))
     {
         $_SESSION['s_testid']=1 ;
     }
     
-    echo 'UserID'.$_SESSION['s_userid'];
-
-    $insert_usr = sprintf("INSERT INTO UserDetails (userid,created_date) VALUES ('".htmlspecialchars($newUser,ENT_QUOTES)."',NOW());
+    //Checking for existence of user id in session value.
+    if(!isset($_SESSION['s_userid']))
+    {
+        $_SESSION['s_userid']=$newUser ;
+        $insert_usr = sprintf("INSERT INTO UserDetails (userid,created_date) VALUES ('".htmlspecialchars($newUser,ENT_QUOTES)."',NOW());
                                             ");
-                    
-
-    $sucess = $connection->query($insert_usr) or die(mysqli_error($connection)); 
-
+        $sucess = $connection->query($insert_usr) or die(mysqli_error($connection)); 
+    
+    }
+   
+   
     mysqli_autocommit($connection,FALSE);
 		    
 	    // Updated <19 APR 2017> Setting up session variables 
@@ -49,8 +46,7 @@
     
      try {
         $connection = connect_to_db();
-        
-        // prepare SQL
+
 	     //updated <19 APR 2017 >    added condition DT.testname='MBTI'   
         $sql = sprintf("SELECT DQ.qusid, DT.Testid, DQ.qus_desc, OPT.op1, OPT.op2, OPT.op3, OPT.op4, OPT.op5
                             From Dim_Question DQ

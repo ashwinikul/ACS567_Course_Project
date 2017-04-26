@@ -38,7 +38,6 @@
         		if ($key === 'qusid')
         		{
         		    echo "<br><li> " . $innerArray['qus_desc'] . "</li><br>";
-        		    //echo "<br><li>" .$itemno++. ". " . $innerArray['qus_desc'] . "</li><br><br>";
         		    echo "<div>";
                     echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='1' onclick='answeredCounter()'>" .  $innerArray['op1'] ."<br>";
                     echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='2' onclick='answeredCounter()'>" .  $innerArray['op2'] ."<br>";
@@ -81,7 +80,6 @@
 
         $serialized = htmlspecialchars(serialize($organizedArray));
         echo "<input type=\"hidden\" name=\"ArrayData\" value=\"$serialized\"/>";
-
     }
         if(isset($_POST["SubmitAsmt"]))
         {
