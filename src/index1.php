@@ -26,6 +26,11 @@
         $_SESSION['s_userid']=$newUser ;
     }
     
+        if(!isset($_SESSION['s_testid']))
+    {
+        $_SESSION['s_testid']=1 ;
+    }
+    
     echo 'UserID'.$_SESSION['s_userid'];
 
     $insert_usr = sprintf("INSERT INTO UserDetails (userid,created_date) VALUES ('".htmlspecialchars($newUser,ENT_QUOTES)."',NOW());
@@ -47,7 +52,7 @@
         
         // prepare SQL
 	     //updated <19 APR 2017 >    added condition DT.testname='MBTI'   
-        $sql = sprintf("SELECT DQ.qusid, DT.Testid, DQ.qus_desc, OPT.op1, OPT.op2
+        $sql = sprintf("SELECT DQ.qusid, DT.Testid, DQ.qus_desc, OPT.op1, OPT.op2, OPT.op3, OPT.op4, OPT.op5
                             From Dim_Question DQ
                             INNER JOIN  Dim_Test DT ON DQ.testid= DT.testid
                             INNER JOIN Dim_Qus_Option OPT ON (DQ.testid=OPT.testid and DQ.qusid=OPT.qusid)

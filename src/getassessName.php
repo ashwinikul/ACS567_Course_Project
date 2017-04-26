@@ -11,7 +11,7 @@
             
     try {
         $newtestid = [];
-        
+        echo 'No of options is'.$_POST['ansoption'];
         $connection = connect_to_db();
         mysqli_autocommit($connection,FALSE);
             
@@ -41,13 +41,12 @@
                         
                         else {
                             $newtestid = $newtestid[0]+1;
-                            echo 'Newusertestid is'.$newtestid.'and userid is '.$_SESSION['s_userid'];
+                            
                             // prepare SQL to insert the new Test name in DB.
                             $sql = sprintf("INSERT INTO Dim_Test (testid, userid, testname, created_date) 
                                         VALUES ($newtestid, $newUser, '".htmlspecialchars($_POST['testname'],ENT_QUOTES)."',now());");
                         
                             $sucess = $connection->query($sql) or die(mysqli_error($connection));  
-                            // echo 'insert into Dim_test status'.$sucess; 
                         }
             } 
             else {      
@@ -55,10 +54,9 @@
                 $insert = sprintf("INSERT INTO Dim_Question (testid, qus_desc, qus_type, ans) VALUES 
                                                                     ($newtestid[0],
                                                                     '".$_POST['questdesc']."',
-                                                                    '2opt',
+                                                                    '".$_POST['ansoption']."',
                                                                     '".$_POST['correctAnswer']."') ;");
-                                                                    
-                 echo 'Insert query in Dim_Question is '.$insert;
+                                                
                 $sucess1 = $connection->query($insert) or die(mysqli_error($connection));  
                                       
                 if ($sucess1 === true) {

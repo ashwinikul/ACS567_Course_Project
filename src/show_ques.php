@@ -40,8 +40,14 @@
         		    echo "<br><li> " . $innerArray['qus_desc'] . "</li><br>";
         		    //echo "<br><li>" .$itemno++. ". " . $innerArray['qus_desc'] . "</li><br><br>";
         		    echo "<div>";
-                    echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='1' onclick='answeredCounter()'>" . $innerArray['op1'] ."<br>";
-                    echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='2' onclick='answeredCounter()'>" . $innerArray['op2'] ."<br>";
+                    echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='1' onclick='answeredCounter()'>" .  $innerArray['op1'] ."<br>";
+                    echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='2' onclick='answeredCounter()'>" .  $innerArray['op2'] ."<br>";
+                    if (!empty($innerArray['op3'])) {
+                        echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='3' onclick='answeredCounter()'>" .  $innerArray['op3'] ."<br>";}
+                    if (!empty($innerArray['op4'])) {
+                        echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='4' onclick='answeredCounter()'>" .  $innerArray['op4'] ."<br>";}
+                    if (!empty($innerArray['op5'])) {
+                        echo "<input type='radio' name='selection_".$innerArray['qusid']."' value='5' onclick='answeredCounter()'>" .  $innerArray['op5'] ."<br>";}
                     echo "</div>";
                     echo "<input type='hidden' name='qusid' value='".$innerArray['qusid']."'>";
         		}
@@ -65,7 +71,6 @@
                  
         	else if ($itemcount % 5 == 0)
             {
-                
                 echo "</div>";
         		echo "<p id='slide' style='text-indent: 10em;'>";
                 echo "<input type='button' id='next".$divCnt."' name='next' value='Next' onclick='nextButton(".++$divCnt.")' />"."<br><br>";

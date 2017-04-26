@@ -74,12 +74,14 @@ $(".chosen-select").change(function(){
     binddiv.empty();
     for (i=1; i <= optionCount; i++) {
         var txt1 = "<br><br>";               // Create element with HTML  
-        var txt2 = "<textarea id='styled' class='options' name='styled"+i+"' title='Choose a radio button to select the correct answer' placeholder='Enter answer choice "+i+"' style='height: 20px;' />&nbsp;";
+        var txt2 = "<textarea id='styled' class='options' name='styled"+i+"' title='Choose a radio button to select the correct answer' placeholder='Enter answer choice "+i+"' style='height: 40px;' />&nbsp;";
         var txt3 = "<input type='radio' class='selection' name='selection' <?php if ((isset($_POST['selection']))) echo 'checked'; ?> ";
         binddiv.append(txt1,txt2,txt3);
     }
     var txt4 = "<br><input type='submit' name='Submit' value='Submit' onclick='submitAsses();' style='position: relative; right: 5px; top: 15px;' /><br><br>";
-    binddiv.append(txt4);
+    var txt5 = "<br><input type='hidden' name='NoOfOp' value='"+optionCount+"'>";
+            
+    binddiv.append(txt4, txt5);
     i=1;
 });									  
 											 
@@ -113,7 +115,7 @@ function submitAsses(str) {
     }
     
     else {
-        var str = "testname="+testname+"&questdesc="+ questdesc + "&options=" + options+"&correctAnswer="+correctAnswer;
+        var str = "testname="+testname+"&questdesc="+ questdesc + "&options=" + options+"&correctAnswer="+correctAnswer+"&ansoption="+ansoption.length;
         for(var j = 0; j < ansoption.length; j++)
         {
             ansoption.item(j).value = "";
