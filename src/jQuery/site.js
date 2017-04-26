@@ -7,9 +7,6 @@
 var sizeOfQSet=0;				 
 var i=0;
 
-function Test() {
-     $("#TestDescription1").show();
-}
 
 function showMBTI() {
     $("#content1").show();
@@ -31,11 +28,6 @@ $(".tagline").click(function() {
     return false;
 
 });
-
-$(".toggle").click(function() {
-    alert("Sucess");
-});
-
 
 var ansCnt=0;
 
@@ -79,17 +71,19 @@ $(".chosen-select").change(function(){
     binddiv.empty();
     for (i=1; i <= optionCount; i++) {
         var txt1 = "<br><br>";               // Create element with HTML  
-        var txt2 = "<textarea id='styled' class='options' name='styled"+i+"' title='Choose a radio button to select the correct answer' placeholder='Enter answer choice "+i+"' style='height: 20px;' />&nbsp;";
+        var txt2 = "<textarea id='styled' class='options' name='styled"+i+"' title='Choose a radio button to select the correct answer' placeholder='Enter answer choice "+i+"' style='height: 40px;' />&nbsp;";
         var txt3 = "<input type='radio' class='selection' name='selection' <?php if ((isset($_POST['selection']))) echo 'checked'; ?> ";
         binddiv.append(txt1,txt2,txt3);
     }
     var txt4 = "<br><input type='submit' name='Submit' value='Submit' onclick='submitAsses();' style='position: relative; right: 5px; top: 15px;' /><br><br>";
-    binddiv.append(txt4);
+    var txt5 = "<br><input type='hidden' name='NoOfOp' value='"+optionCount+"'>";
+            
+    binddiv.append(txt4, txt5);
     i=1;
 });									  
 											 
 
-//Function for submitting custom Questionaire											 
+//Function for submitting a newly created custom Questionaire											 
 function submitAsses(str) {
 	
     var options = new Array();
@@ -107,26 +101,18 @@ function submitAsses(str) {
     }
     
     for(var i = 0; i < ansoption.length; i++) {
-		 
             options.push(ansoption.item(i).value);
             if(selections[i].checked) {
                 correctAnswer = ansoption.item(i).value;
             }
-				  
-																				
-									   
-			 
         }
 
     if(correctAnswer== null || correctAnswer.length == 0) {
                 alert("Choose a radio button that represents a correct choice");
-													  
-											  
-							   
     }
     
     else {
-        var str = "testname="+testname+"&questdesc="+ questdesc + "&options=" + options+"&correctAnswer="+correctAnswer;
+        var str = "testname="+testname+"&questdesc="+ questdesc + "&options=" + options+"&correctAnswer="+correctAnswer+"&ansoption="+ansoption.length;
         for(var j = 0; j < ansoption.length; j++)
         {
             ansoption.item(j).value = "";
@@ -141,8 +127,6 @@ function submitAsses(str) {
     }
         event.preventdefault();
 }
-
-							   
 
 
 
