@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     
-    <!-- Custom CSS FIX ?? -->
+    <!-- Custom CSS FIX-->
     <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
 
 	  <link rel="stylesheet" href="css/main.css">
@@ -27,7 +27,8 @@
     <!-- needed in this page? 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
   </head> 
-  <body>
+  
+  <body> 
     <!--/header navigation bar-->
     <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
         <div class="container">
@@ -44,105 +45,722 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="home.html">About MBTI</a></li>
                     <li><a href="assessment.html">Assessment</a></li>
-                     <li><a href="questionnaire.html">Questionnaire</a></li>
+                    <li><a href="questionnaire.html">Questionnaire</a></li>
                     <li><a href="CustomTest.html">Custom Assessments</a></li>
-              <li class="firstList"><a href="16personality.html">16 Personality Types</a>
-                <ul class="dropdown">
-                  <li id="click" class="list firstList"><a href="#guardian">Guardian</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ESTJ">ESTJ - "The Supervisors"</a></li>
-              					<li class="list"><a href="#ISTJ">ISTJ - "The Inspectors"</a></li>
-              					<li class="list"><a href="#ESFJ">ESFJ - "The Providers"</a></li>
-              					<li class="list"><a href="#ISFJ">ISFJ - "The Protectors"</a></li>
-				              </ul>
-				          </li>
-				          <li class="list firstList"><a href="#rational">Rational</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ENTJ">ENTJ - "The Fieldmarshals</a></li>
-              					<li class="list"><a href="#INTJ">INTJ - "The Masterminds"</a></li>
-              					<li class="list"><a href="#ENTP">ENTP - "The Inventors"</a></li>
-              					<li class="list"><a href="#INTP">INTP - "The Architects"</a></li>
-          				    </ul>
-          				</li>    
-				          <li class="list firstList"><a href="#idealist">Idealist</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ENFJ">ENFJ - "The Teachers"</a></li>
-              					<li class="list"><a href="#INFJ">INFJ - "The Counselors"</a></li>
-              					<li class="list"><a href="#ENFP">ENFP - "The Champions"</a></li>
-              					<li class="list"><a href="#INFP">INFP - "The Healers"</a></li>
-          				    </ul>
-          				</li>
-				          <li class="list firstList"><a href="#artisan">Artisan</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ESTP">ESTP - "The Promoters"</a></li>
-              					<li class="list"><a href="#ISTP">ISTP - "The Crafters"</a></li>
-              					<li class="list"><a href="#ESFP">ESFP - "The Performers"</a></li>
-              					<li class="list"><a href="#ISFP">ISFP - "The Composers"</a></li>
-          				    </ul>
-          				</li>
-          			</ul>	
-               </li>
-            </ul>
+                    <li class="dropdown active"><a tabindex="5" href="16personality.html" class="dropdown-toggle" data-toggle="dropdown">16 Personality Types<i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu"><a href="16personality.html">The Guardians</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#ESTJ">ESTJ</a></li>
+                                  <li><a href="#ISTJ">ISTJ</a></li>
+                                  <li><a href="#ESFJ">ESFJ</a></li>
+                                  <li><a href="#ISFJ">ISFJ</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">The Rationals</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#ENTJ">ENTJ</a></li>
+                                  <li><a href="#INTJ">INTJ</a></li>
+                                  <li><a href="#ENTP">ENTP</a></li>
+                                  <li><a href="#INTP">INTP</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">The Idealists</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#ENFJ">ENFJ</a></li>
+                                  <li><a href="#INFJ">INFJ</a></li>
+                                  <li><a href="#ENFP">ENFP</a></li>
+                                  <li><a href="#INFP">INFP</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">The Artisans</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#ESTP">ESTP</a></li>
+                                  <li><a href="#ISTP">ISTP</a></li>
+                                  <li><a href="#ESFP">ESFP</a></li>
+                                  <li><a href="#ISFP">ISFP</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <!--/ourmenu
-            <ul class="topmenu">
-              <li><a href="home.html">About MBTI</a>
-              <li><a href="assessment.html" data-target="index1" class="tagline">Assessment</a></li>
-              <li><a href="questionnaire.html">Questionnaire</a></li>
-              <li class="firstList"><a href="16personality.html">16 Personality Types</a>
-                <ul class="dropdown">
-                  <li id="click" class="list firstList"><a href="#guardian">Guardian</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ESTJ">ESTJ - "The Supervisors"</a></li>
-              					<li class="list"><a href="#ISTJ">ISTJ - "The Inspectors"</a></li>
-              					<li class="list"><a href="#ESFJ">ESFJ - "The Providers"</a></li>
-              					<li class="list"><a href="#ISFJ">ISFJ - "The Protectors"</a></li>
-				              </ul>
-				          </li>
-				          <li class="list firstList"><a href="#rational">Rational</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ENTJ">ENTJ - "The Fieldmarshals</a></li>
-              					<li class="list"><a href="#INTJ">INTJ - "The Masterminds"</a></li>
-              					<li class="list"><a href="#ENTP">ENTP - "The Inventors"</a></li>
-              					<li class="list"><a href="#INTP">INTP - "The Architects"</a></li>
-          				    </ul>
-          				</li>    
-				          <li class="list firstList"><a href="#idealist">Idealist</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ENFJ">ENFJ - "The Teachers"</a></li>
-              					<li class="list"><a href="#INFJ">INFJ - "The Counselors"</a></li>
-              					<li class="list"><a href="#ENFP">ENFP - "The Champions"</a></li>
-              					<li class="list"><a href="#INFP">INFP - "The Healers"</a></li>
-          				    </ul>
-          				</li>
-				          <li class="list firstList"><a href="#artisan">Artisan</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="#ESTP">ESTP - "The Promoters"</a></li>
-              					<li class="list"><a href="#ISTP">ISTP - "The Crafters"</a></li>
-              					<li class="list"><a href="#ESFP">ESFP - "The Performers"</a></li>
-              					<li class="list"><a href="#ISFP">ISFP - "The Composers"</a></li>
-          				    </ul>
-          				</li>
-          			</ul>	
-               </li>
-            </ul>
--->
+    <!-- Page Title -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>The 16 Personality Types</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+    <!-- Page Title -->
+    <div class="container-fluid bg-3 text-center">    
+      <h3>The Guardians</h3><br>
+      <div class="row">
+        <div class="col-sm-3"> <!-- ESTJ-->
+             <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="https://s-media-cache-ak0.pinimg.com/originals/aa/5f/0b/aa5f0bc1180933ce86da9f9f47849f64.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ESTJs are hardworking traditionalists, eager to take charge in organizing projects and people. Orderly, rule-abiding, and conscientious, ESTJs like to get things done, and tend to go about projects in a systematic, methodical way.ESTJs are the consummate organizers, and want to bring structure to their surroundings. They value predictability and prefer things to proceed in a logical order. When they see a lack of organization, the ESTJ often takes the initiative to establish processes and guidelines, so that everyone knows what's expected.</p>
+                                <h3 class="name">Famous ESTJ</h3>
+                                    <ul>
+                                        <li>Colin Powell</li>
+                                        <li>Judge Judy Sheindlin</li>
+                                        <li>Dr. Laura Schlessinger</li>
+                                        <li>George Washington</li>
+                                        <li>Sandra Day O’Connor</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ESTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ESTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, likely to score as Contented, Energetic, Prejudiced, Self-Satisfied, and Practical</li>
+                                        <li>More likely than other types to exhibit Type A behavior</li>
+                                        <li>Of all types, scored highest in coping resources (with ENFP)</li>
+                                        <li>Ranked 3rd highest in marital satisfaction among all types</li>
+                                        <li>Among top four types in college GPA</li>
+                                        <li>Least likely of all types to think about suicide in college</li>
+                                        <li>Among most likely to stay in college</li>
+                                    </ul>
+                                <h3 class="name">ESTJ in the Population</h3>
+                                    <ul>
+                                        <li>ESTJ is the fifth most common type in the population, and the second most common among men</li>
+                                        <li>ESTJs make up: 9% of the general population, 11% of men, 6% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> <!-- ISTJ -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="https://s-media-cache-ak0.pinimg.com/originals/b0/25/8f/b0258f7cb6678e2d14280a66a24ae144.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ISTJs are responsible organizers, driven to create and enforce order within systems and institutions. They are neat and orderly, inside and out, and tend to have a procedure for everything they do. Reliable and dutiful, ISTJs want to uphold tradition and follow regulations. ISTJs are steady, productive contributors. Although they are Introverted, ISTJs are rarely isolated; typical ISTJs know just where they belong in life, and want to understand how they can participate in established organizations and systems. They concern themselves with maintaining the social order and making sure that standards are met.</p>
+                                <h3 class="name">Famous ISTJ</h3>
+                                    <ul>
+                                        <li>Queen Elizabeth II</li>
+                                        <li>Harry Truman</li>
+                                        <li>Warren Buffett</li>
+                                        <li>Queen Victoria</li>
+                                        <li>George H.W. Bush</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ISTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ISTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Calm, Stable, Steady, Cautious, and Conventional</li>
+                                        <li>More likely than other types to experience cardiac problems and hypertension</li>
+                                        <li>More likely than other types to experience chronic pain</li>
+                                        <li>Among four highest types in college GPA</li>
+                                        <li>Personal values include Financial Security</li>
+                                        <li>Most likely of all types to enjoy a work environment where “everything is done by the book”</li>
+                                        <li>Often found in careers in management, administration, law enforcement, and accounting</li>
+                                    </ul>
+                                <h3 class="name">ISTJ in the Population</h3>
+                                    <ul>
+                                        <li>ISTJ is the third most common type in the population and the most common type among men. ISTJs make up:</li>
+                                        <li>12% of the general population, 16% of men, 7% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> <!-- ESFJ -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/ESFJ.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ESFJs are conscientious helpers, sensitive to the needs of others and energetically dedicated to their responsibilities. They are highly attuned to their emotional environment and attentive to both the feelings of others and the perception others have of them. ESFJs like a sense of harmony and cooperation around them, and are eager to please and provide. ESFJs value loyalty and tradition, and usually make their family and friends their top priority. They are generous with their time, effort, and emotions. They often take on the concerns of others as if they were their own, and will attempt to put their significant organizational talents to use to bring order to other people's lives.</p>
+                                <h3 class="name">Famous ESFJ</h3>
+                                    <ul>
+                                        <li>Martha Stewart</li>
+                                        <li>Dave Thomas</li>
+                                        <li>Sam Walton</li>
+                                        <li>Barbara Walters</li>
+                                        <li>William Howard Taft</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ESFJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ESFJ</h4>
+                                    <ul>
+                                        <li>Among types highest in resources for coping with stress</li>
+                                        <li>Second most likely of all types to report believing in a higher spiritual power</li>
+                                        <li>Highest of all types in reported satisfaction with their marriage or intimate relationship</li>
+                                        <li>Among most likely of all types to stay in college</li>
+                                        <li>Most likely of all types to be satisfied with their co-workers</li>
+                                        <li>Values at work include clear structure, security, and the ability to be of service to others</li>
+                                        <li>Among the types most satisfied with their work</li>
+                                    </ul>
+                                <h3 class="name">ESFJ in the Population</h3>
+                                    <ul>
+                                        <li>ESFJ is the second most common type in the population. ESFJs make up:</li>
+                                        <li>12% of the general population, 17% of women, 8% of men</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> <!-- ISFJ -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/ISFJ.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ISFJs are industrious caretakers, loyal to traditions and organizations. They are practical, compassionate, and caring, and are motivated to provide for others and protect them from the perils of life. ISFJs are conventional and grounded, and enjoy contributing to established structures of society. They are steady and committed workers with a deep sense of responsibility to others. They focus on fulfilling their duties, particularly when they are taking care of the needs of other people. They want others to know that they are reliable and can be trusted to do what is expected of them. They are conscientious and methodical, and persist until the job is done.</p>
+                                <h3 class="name">Famous ISFJ</h3>
+                                    <ul>
+                                        <li>Mother Teresa</li>
+                                        <li>Laura Bush</li>
+                                        <li>King George VI</li>
+                                        <li>Kate Middleton</li>
+                                        <li>Rosa Parks</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ISFJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ISFJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Conservative, Conventional, Guarded, and Reserved</li>
+                                        <li>Among types most likely to believe in a higher spiritual power</li>
+                                        <li>More likely than average to experience chronic pain</li>
+                                        <li>Among types most likely to suffer heart disease</li>
+                                        <li>Second most common type among education majors in college</li>
+                                        <li>More likely than other types to watch more than 3 hours of television per day</li>
+                                        <li>Personal values include Happy family, Health and Spirituality</li>
+                                    </ul>
+                                <h3 class="name">ISFJ in the Population</h3>
+                                    <ul>
+                                        <li>ISFJ is the most common type in the U.S. population, and the most common type among women. ISFJs make up:</li>
+                                        <li>14% of the general population, 19% of women, 8% of men</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+      </div>
+    </div><br>
 
-        <!-- Page Title -->
-    		<div class="section section-breadcrumbs">
-    			<div class="container">
-    				<div class="row">
-    					<div class="col-md-12">
-    						<h1>The 16 Personality Types </h1>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    		
+    <div class="container-fluid bg-3 text-center">  
+      <h3>The Rationals</h3><br>
+      <div class="row">
+        <div class="col-sm-3"> <!-- ENTJ -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/ENTJ.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ENTJs are strategic leaders, motivated to organize change. They are quick to see inefficiency and conceptualize new solutions, and enjoy developing long-range plans to accomplish their vision. They excel at logical reasoning and are usually articulate and quick-witted. ENTJs are analytical and objective, and like bringing order to the world around them. When there are flaws in a system, the ENTJ sees them, and enjoys the process of discovering and implementing a better way. ENTJs are assertive and enjoy taking charge; they see their role as that of leader and manager, organizing people and processes to achieve their goals.</p>
+                                <h3 class="name">Famous ENTJ</h3>
+                                    <ul>
+                                        <li>Margaret Thatcher</li>
+                                        <li>Napoleon Bonaparte</li>
+                                        <li>Carl Sagan</li>
+                                        <li>General Norman Schwarzkopf</li>
+                                        <li>David Letterman</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ENTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ENTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Ambitious, Forceful, Optimistic, Egotistical, Adaptable, and Energetic</li>
+                                        <li>Least likely of all types to report stress resulting from work or finances</li>
+                                        <li>More likely than average to suffer cardiac problems</li>
+                                        <li>Among the least likely of all types to believe in a higher spiritual power</li>
+                                        <li>Among top 4 types in college GPA</li>
+                                        <li>Among most likely to stay in college</li>
+                                        <li>Personal values include Home/Family, Achievement, Creativity, and Learning</li>
+                                    </ul>
+                                <h3 class="name">ENTJ in the Population</h3>
+                                    <ul>
+                                        <li>ENTJ is one of the least common types in the population, and the rarest type among women (with INTJ). ENTJs make up:</li>
+                                        <li>2% of the general population, 3% of men, 1% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> <!-- INTJ -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/INTJ.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ENTJs are strategic leaders, motivated to organize change. They are quick to see inefficiency and conceptualize new solutions, and enjoy developing long-range plans to accomplish their vision. They excel at logical reasoning and are usually articulate and quick-witted. ENTJs are analytical and objective, and like bringing order to the world around them. When there are flaws in a system, the ENTJ sees them, and enjoys the process of discovering and implementing a better way. ENTJs are assertive and enjoy taking charge; they see their role as that of leader and manager, organizing people and processes to achieve their goals.</p>
+                                <h3 class="name">Famous ENTJ</h3>
+                                    <ul>
+                                        <li>Margaret Thatcher</li>
+                                        <li>Napoleon Bonaparte</li>
+                                        <li>Carl Sagan</li>
+                                        <li>General Norman Schwarzkopf</li>
+                                        <li>David Letterman</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ENTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ENTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Ambitious, Forceful, Optimistic, Egotistical, Adaptable, and Energetic</li>
+                                        <li>Least likely of all types to report stress resulting from work or finances</li>
+                                        <li>More likely than average to suffer cardiac problems</li>
+                                        <li>Among the least likely of all types to believe in a higher spiritual power</li>
+                                        <li>Among top 4 types in college GPA</li>
+                                        <li>Among most likely to stay in college</li>
+                                        <li>Personal values include Home/Family, Achievement, Creativity, and Learning</li>
+                                    </ul>
+                                <h3 class="name">ENTJ in the Population</h3>
+                                    <ul>
+                                        <li>ENTJ is one of the least common types in the population, and the rarest type among women (with INTJ). ENTJs make up:</li>
+                                        <li>2% of the general population, 3% of men, 1% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> <!-- ENTP -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/ENTP.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ENTJs are strategic leaders, motivated to organize change. They are quick to see inefficiency and conceptualize new solutions, and enjoy developing long-range plans to accomplish their vision. They excel at logical reasoning and are usually articulate and quick-witted. ENTJs are analytical and objective, and like bringing order to the world around them. When there are flaws in a system, the ENTJ sees them, and enjoys the process of discovering and implementing a better way. ENTJs are assertive and enjoy taking charge; they see their role as that of leader and manager, organizing people and processes to achieve their goals.</p>
+                                <h3 class="name">Famous ENTJ</h3>
+                                    <ul>
+                                        <li>Margaret Thatcher</li>
+                                        <li>Napoleon Bonaparte</li>
+                                        <li>Carl Sagan</li>
+                                        <li>General Norman Schwarzkopf</li>
+                                        <li>David Letterman</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ENTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ENTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Ambitious, Forceful, Optimistic, Egotistical, Adaptable, and Energetic</li>
+                                        <li>Least likely of all types to report stress resulting from work or finances</li>
+                                        <li>More likely than average to suffer cardiac problems</li>
+                                        <li>Among the least likely of all types to believe in a higher spiritual power</li>
+                                        <li>Among top 4 types in college GPA</li>
+                                        <li>Among most likely to stay in college</li>
+                                        <li>Personal values include Home/Family, Achievement, Creativity, and Learning</li>
+                                    </ul>
+                                <h3 class="name">ENTJ in the Population</h3>
+                                    <ul>
+                                        <li>ENTJ is one of the least common types in the population, and the rarest type among women (with INTJ). ENTJs make up:</li>
+                                        <li>2% of the general population, 3% of men, 1% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> <!-- INTP -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/INTP.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ENTJs are strategic leaders, motivated to organize change. They are quick to see inefficiency and conceptualize new solutions, and enjoy developing long-range plans to accomplish their vision. They excel at logical reasoning and are usually articulate and quick-witted. ENTJs are analytical and objective, and like bringing order to the world around them. When there are flaws in a system, the ENTJ sees them, and enjoys the process of discovering and implementing a better way. ENTJs are assertive and enjoy taking charge; they see their role as that of leader and manager, organizing people and processes to achieve their goals.</p>
+                                <h3 class="name">Famous ENTJ</h3>
+                                    <ul>
+                                        <li>Margaret Thatcher</li>
+                                        <li>Napoleon Bonaparte</li>
+                                        <li>Carl Sagan</li>
+                                        <li>General Norman Schwarzkopf</li>
+                                        <li>David Letterman</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ENTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ENTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Ambitious, Forceful, Optimistic, Egotistical, Adaptable, and Energetic</li>
+                                        <li>Least likely of all types to report stress resulting from work or finances</li>
+                                        <li>More likely than average to suffer cardiac problems</li>
+                                        <li>Among the least likely of all types to believe in a higher spiritual power</li>
+                                        <li>Among top 4 types in college GPA</li>
+                                        <li>Among most likely to stay in college</li>
+                                        <li>Personal values include Home/Family, Achievement, Creativity, and Learning</li>
+                                    </ul>
+                                <h3 class="name">ENTJ in the Population</h3>
+                                    <ul>
+                                        <li>ENTJ is one of the least common types in the population, and the rarest type among women (with INTJ). ENTJs make up:</li>
+                                        <li>2% of the general population, 3% of men, 1% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+      </div>
+    </div><br>
+
+    <div class="container-fluid bg-3 text-center">  
+      <h3>The Idealists</h3><br>
+      <div class="row">
+        <div class="col-sm-3"> <!-- ENFJ -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/ENFJ.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ENTJs are strategic leaders, motivated to organize change. They are quick to see inefficiency and conceptualize new solutions, and enjoy developing long-range plans to accomplish their vision. They excel at logical reasoning and are usually articulate and quick-witted. ENTJs are analytical and objective, and like bringing order to the world around them. When there are flaws in a system, the ENTJ sees them, and enjoys the process of discovering and implementing a better way. ENTJs are assertive and enjoy taking charge; they see their role as that of leader and manager, organizing people and processes to achieve their goals.</p>
+                                <h3 class="name">Famous ENTJ</h3>
+                                    <ul>
+                                        <li>Margaret Thatcher</li>
+                                        <li>Napoleon Bonaparte</li>
+                                        <li>Carl Sagan</li>
+                                        <li>General Norman Schwarzkopf</li>
+                                        <li>David Letterman</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ENTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ENTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Ambitious, Forceful, Optimistic, Egotistical, Adaptable, and Energetic</li>
+                                        <li>Least likely of all types to report stress resulting from work or finances</li>
+                                        <li>More likely than average to suffer cardiac problems</li>
+                                        <li>Among the least likely of all types to believe in a higher spiritual power</li>
+                                        <li>Among top 4 types in college GPA</li>
+                                        <li>Among most likely to stay in college</li>
+                                        <li>Personal values include Home/Family, Achievement, Creativity, and Learning</li>
+                                    </ul>
+                                <h3 class="name">ENTJ in the Population</h3>
+                                    <ul>
+                                        <li>ENTJ is one of the least common types in the population, and the rarest type among women (with INTJ). ENTJs make up:</li>
+                                        <li>2% of the general population, 3% of men, 1% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> 
+          <p>Some text..</p>
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3"> 
+          <p>Some text..</p>
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+          <p>Some text..</p>
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+      </div>
+    </div><br>
+
+    <div class="container-fluid bg-3 text-center">  
+      <h3>The Artisans</h3><br>
+      <div class="row">
+        <div class="col-sm-3"> <!-- ENTJ -->
+            <div class="card-container manual-flip">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="https://www.clipartsgram.com/image/124089475-california-beaches-tumblr-wallpaper-3.jpg"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="http://www.careermed.org/wp-content/uploads/2015/09/ENTJ.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <p class="profession">ENTJs are strategic leaders, motivated to organize change. They are quick to see inefficiency and conceptualize new solutions, and enjoy developing long-range plans to accomplish their vision. They excel at logical reasoning and are usually articulate and quick-witted. ENTJs are analytical and objective, and like bringing order to the world around them. When there are flaws in a system, the ENTJ sees them, and enjoys the process of discovering and implementing a better way. ENTJs are assertive and enjoy taking charge; they see their role as that of leader and manager, organizing people and processes to achieve their goals.</p>
+                                <h3 class="name">Famous ENTJ</h3>
+                                    <ul>
+                                        <li>Margaret Thatcher</li>
+                                        <li>Napoleon Bonaparte</li>
+                                        <li>Carl Sagan</li>
+                                        <li>General Norman Schwarzkopf</li>
+                                        <li>David Letterman</li>
+                                    </ul>
+                            </div>
+                            <div class="end">
+                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Rotate
+                                </button>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"ENTJ"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="name">Facts About ENTJ</h4>
+                                    <ul>
+                                        <li>On personality trait measures, score as Ambitious, Forceful, Optimistic, Egotistical, Adaptable, and Energetic</li>
+                                        <li>Least likely of all types to report stress resulting from work or finances</li>
+                                        <li>More likely than average to suffer cardiac problems</li>
+                                        <li>Among the least likely of all types to believe in a higher spiritual power</li>
+                                        <li>Among top 4 types in college GPA</li>
+                                        <li>Among most likely to stay in college</li>
+                                        <li>Personal values include Home/Family, Achievement, Creativity, and Learning</li>
+                                    </ul>
+                                <h3 class="name">ENTJ in the Population</h3>
+                                    <ul>
+                                        <li>ENTJ is one of the least common types in the population, and the rarest type among women (with INTJ). ENTJs make up:</li>
+                                        <li>2% of the general population, 3% of men, 1% of women</li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div>
+        <div class="col-sm-3"> 
+          <p>Some text..</p>
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3"> 
+          <p>Some text..</p>
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+        <div class="col-sm-3">
+          <p>Some text..</p>
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </div>
+      </div>
+    </div><br>
+
 		  <div id="content1">
 		  <h1 id="guardian">Guardians</h1>
 		  <p>As Concrete Cooperators, Guardians speak mostly of their duties and responsibilities, of what they can keep an eye on and take good care of, and they're careful to obey the laws, follow the rules, and respect the rights of others.</br></p>
@@ -281,11 +899,6 @@
     		      <h3>Facts About ISFP</h3>
                   <p>On personality trait measures, score as Easygoing</br>Among types most likely to report heart disease and hypertension</br>In college, likely to report low levels of assertiveness</br>In essays, projected themselves the fewest number of years into the future of all the types</br>Among the types least likely to stay in college</br>Most likely of all types to report stress associated with finances and children</br>In a national sample, likely to value a work environment which provides security, clear and simple instructions, and no expectation of extra work hours</br>Underrepresented among MBA students and small business owners</br>Commonly found in occupations in health care, business, and law enforcement</p>
 
-          <form method="post" action="index1.php">
-            <div id="content1">
-              <?php include('index1.php'); ?>
-              <?php include('submit_asmt.php'); ?> 
-            </form></div>
 
 	    <!-- Footer -->
 	    <div class="footer">
@@ -311,6 +924,10 @@
             <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
             <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
             <script src="jQuery/site.js"></script>
+            
+          <!-- Card Rotation JavaScript -->
+          <script src="jQuery/card-tabs.js"></script> 
+      
   </body>
 </html> 
 
