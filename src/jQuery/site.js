@@ -32,11 +32,6 @@ $(".tagline").click(function() {
 
 });
 
-$(".toggle").click(function() {
-    alert("Sucess");
-});
-
-
 var ansCnt=0;
 
 function funcsizeofQSet(size){
@@ -89,7 +84,7 @@ $(".chosen-select").change(function(){
 });									  
 											 
 
-//Function for submitting custom Questionaire											 
+//Function for submitting a newly created custom Questionaire											 
 function submitAsses(str) {
 	
     var options = new Array();
@@ -107,22 +102,14 @@ function submitAsses(str) {
     }
     
     for(var i = 0; i < ansoption.length; i++) {
-		 
             options.push(ansoption.item(i).value);
             if(selections[i].checked) {
                 correctAnswer = ansoption.item(i).value;
             }
-				  
-																				
-									   
-			 
         }
 
     if(correctAnswer== null || correctAnswer.length == 0) {
                 alert("Choose a radio button that represents a correct choice");
-													  
-											  
-							   
     }
     
     else {
@@ -141,8 +128,6 @@ function submitAsses(str) {
     }
         event.preventdefault();
 }
-
-							   
 
 
 

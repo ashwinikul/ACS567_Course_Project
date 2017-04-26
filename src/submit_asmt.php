@@ -1,11 +1,19 @@
 <?php
 //	Developer: Sindhu Balakrishnan
 //	Description: PHP file to submit an assessment details.
-
+	
+	// Updated <19 APR 2017> Setting up session variables
+    //  session_start(); // session start
+                    
+    $newUser= $_SESSION['s_userid'];
+    $s_testid = $_SESSION['s_testid'];
+    //$_SESSION['s_emailid']=$email ;    
+    //echo 'New user id is'.$newUser.'And testid is'.$s_testid;
+    
     require_once('db_conn.php');
     
     function submit_asmt()
-        {
+    {
             try {
                     $connection = connect_to_db();
 
@@ -19,12 +27,7 @@
                     mysqli_autocommit($connection,FALSE);*/
 		    
 		            //$email ="ash.kulkarni1990@gmail.com"; // Need to update this code as of noe its hardcoded
-		            // Updated <19 APR 2017> Setting up session variables
-		            session_start(); // session start
-                    
-                    $newUser= $_SESSION['s_userid'];
-                    //$_SESSION['s_emailid']=$email ;
-                    $s_testid = $_SESSION['s_testid'];
+
                     
                      /*
                     if ($sucess === false)
@@ -44,18 +47,17 @@
                     
                     if (is_array($original_array)) 
                     {
-                        
                         for ($row = 1; $row < $_POST['sizeOfQSet'] + 1; $row++) 
                         {
                                 $testid = $original_array[$row][0];
                                 $qusid = $original_array[$row][1];
                                 $ans = $_POST['selection_'.$qusid];
-                        
+                                $newUser = $_SESSION['s_userid'];
+                            //echo 'Print again: New user id is'.$newUser.'And testid is'.$testid;
                             $insert = sprintf("INSERT INTO Test_User_Ans(testid, userid, qusid, ans, created_date)
                                                 VALUES ('".htmlspecialchars($testid,ENT_QUOTES)."','".htmlspecialchars($newUser,ENT_QUOTES)."','".htmlspecialchars($qusid,ENT_QUOTES)."','".htmlspecialchars($ans,ENT_QUOTES)."', now());
                                                     ");
-                            
-                            // execute query
+                                                    
                             $ins_sucess = $connection->query($insert) or die(mysqli_error($connection));  
                                 
                             if ($ins_sucess === false)
@@ -97,18 +99,13 @@
                 exit;
             }
                 
-            //if($sucess === true && $error === false)
             if($ins_sucess === true)
             {
                 //header("Location: confirmation.php");
-		// Updated <19 APR 2017> 
-	           
-                    	    
-                    		header("Location: result.html"); 
-                    	
-                    	
-            exit;
-                
+		  // Updated <19 APR 2017> 
+	       		header("Location: result.html"); 
+                exit;
             }
     }
+    
 ?>
