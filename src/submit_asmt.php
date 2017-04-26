@@ -2,7 +2,10 @@
 //	Developer: Sindhu Balakrishnan
 //	Description: PHP file to submit an assessment details.
 	
-	// Updated <19 APR 2017> Setting up session variables
+// Updated <19 APR 2017><ashwini> Code block added
+/***************************************************************************/
+
+// Updated <19 APR 2017> Setting up session variables
     
     session_start(); // session start
                     
@@ -45,7 +48,7 @@
                         }
                     }
 		    
-		// Updated <19 APR 2017> Making entry in DB which will trigger the calculation  :Start
+		// Updated <19 APR 2017><ashwini> Making entry in DB which will trigger the calculation in DB  :Start
 			   if ($s_testid==1)
                           {
                           $insert_entry =  sprintf("INSERT INTO TestDetails (testid, userid, created_date) VALUES
@@ -66,7 +69,7 @@
                             mysqli_commit($connection);
                             
                             mysqli_close($connection);
-	        // Updated <19 APR 2017> Making entry in DB which will trigger the calculation   :End    
+	        // Updated <19 APR 2017><ashwini> Making entry in DB which will trigger the calculation   :End    
                 
             }
                         
