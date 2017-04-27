@@ -10,17 +10,18 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     
-    <!-- Custom CSS FIX ?? -->
+    <!-- Our CSS-->
     <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
-
-	 <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Bootstrap template CSS-->
+	<link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/custom.css" >
 	
-	  <script src="//use.edgefonts.net/bebas-neue.js"></script>
+	<script src="//use.edgefonts.net/bebas-neue.js"></script>
 	
-    <!-- Custom Fonts & Icons -->
+    <!-- Bootstrap Custom Fonts & Icons -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	
   	<script src="jQuery/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	
@@ -102,6 +103,7 @@
 				</div>
 			</div>
 		</div>
+		
         <!-- Page Information - Custom Questionnaire-->
         <div class="section">
 	    	<div class="container">
@@ -138,7 +140,7 @@
 		</div>
 
 <hr>
-        <!-- Page Information - Assessment Form -- button class="form-control btn btn-login"-->
+        <!-- Page Information - Assessment Form -->
         <div class="section">
 	    	<div class="container">
 				<div class="row">
@@ -166,42 +168,6 @@
 			</div>
 		</div>
 		
-            
-
-<!-- 
-<?php
-session_start();
-
-$conn = mysql_connect('localhost', 'root', '');
-mysql_select_db('library', $conn);
-
-if(isset($_POST['bookID']))
-{
-    $bookID = $_POST['bookID'];
-
-    $result = mysql_query("INSERT INTO borrowing (UserID, BookID, Returned) VALUES ('".$_SESSION['userID']."', '".$bookID."', '3')", $conn);
-
-    if ($result)
-        echo "Book #" + $bookId + " has been reserved.";
-    else
-        echo "An error message!";
-}
-?>
-
-
-            <div>
-            <form method="post" action="">
-              <?php include('index1.php'); ?>
-              <?php include('submit_asmt.php'); ?> 
-            </form>
-          </div> 
-          
-           Javascripts needed?
-            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-            <script src="../jQuery/site.js"></script>
-            -->
-            
 	    <!-- Footer -->
 	    <div class="footer">
 	    	<div class="container">

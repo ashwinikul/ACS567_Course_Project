@@ -10,25 +10,29 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     
-    <!-- Custom CSS FIX ?? 
-    <link type="text/css" href="css/stylesheet.css" rel="stylesheet">-->
-
+    <!-- Our CSS-->
+    <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+    
+    <!-- Bootstrap template CSS-->
 	  <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/custom.css" >
 	
-	  <script src="//use.edgefonts.net/bebas-neue.js"></script>
+  	<script src="//use.edgefonts.net/bebas-neue.js"></script>
 	
-    <!-- Custom Fonts & Icons -->
+    <!-- Bootstrap Custom Fonts & Icons -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+	  <link rel="stylesheet" href="css/font-awesome.min.css">
 	
   	<script src="jQuery/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	
     <!-- Sindu js-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   </head> 
-        
-  <body onload="phpLoad2();" background="images/result.gif" class = "result">>
+  
+    <!-- Ashwini-->
+  <body onload="phpLoad2();" class = "result">
+    <!-- Ashwini-->
+
     <!--/header navigation bar-->
     <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
         <div class="container">
@@ -45,19 +49,45 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="home.html">About MBTI</a></li>
                     <li><a href="assessment.html">Assessment</a></li>
-                     <li><a href="questionnaire.html">Questionnaire</a></li>
-                    <li class="active"><a href="CustomTest.html">Custom Assessment</a></li>
-                    <li><a href="16personality.html">16 Personality Types</a></li>
-                    <li class="dropdown">
+                    <li><a href="questionnaire.html">Questionnaire</a></li>
+                    <li class="active"><a href="CustomTest.html">Custom Assessments</a></li>
+                    <li class="dropdown"><a tabindex="5" href="16personality.html" class="dropdown-toggle" data-toggle="dropdown">16 Personality Types<i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Dropdown Menu 1</a></li>
-                            <li><a href="#">Dropdown Menu 2</a></li>
-                            <li><a href="#">Dropdown Menu 3</a></li>
-                            <li><a href="#">Dropdown Menu 4</a></li>
-                            <li><a href="#">Dropdown Menu 5</a></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">Guardian</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ESTJ">ESTJ</a></li>
+                                  <li><a href="16personality.html#ISTJ">ISTJ</a></li>
+                                  <li><a href="16personality.html#ESFJ">ESFJ</a></li>
+                                  <li><a href="16personality.html#ISFJ">ISFJ</a></li>
+                                </ul>
+                            </li>
                             <li class="divider"></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">The Rationals</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ENTJ">ENTJ</a></li>
+                                  <li><a href="16personality.html#INTJ">INTJ</a></li>
+                                  <li><a href="16personality.html#ENTP">ENTP</a></li>
+                                  <li><a href="16personality.html#INTP">INTP</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">Idealist</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ENFJ">ENFJ</a></li>
+                                  <li><a href="16personality.html#INFJ">INFJ</a></li>
+                                  <li><a href="16personality.html#ENFP">ENFP</a></li>
+                                  <li><a href="16personality.html#INFP">INFP</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">Artisan</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ESTP">ESTP</a></li>
+                                  <li><a href="16personality.html#ISTP">ISTP</a></li>
+                                  <li><a href="16personality.html#ESFP">ESFP</a></li>
+                                  <li><a href="16personality.html#ISFP">ISFP</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -65,60 +95,16 @@
         </div>
     </header>
     
-    <!--/ourmenu
-            <ul class="topmenu">
-              <li><a href="home.html">About MBTI</ a>
-                <li><a href="assessment.html" data-target="index1" class="tagline">Assessment</a></li>
-              <li><a href="questionnaire.html">Questionnaire</a></li>
-              <li class="firstList"><a href="16personality.html">16 Personality Types</a>
-                <ul class="dropdown">
-                  <li id="click" class="list firstList"><a href="16personality.html">Guardian</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="16personality.html">ESTJ - "The Supervisors"</a></li>
-              					<li class="list"><a href="16personality.html">ISTJ - "The Inspectors"</a></li>
-              					<li class="list"><a href="16personality.html">ESFJ - "The Providers"</a></li>
-              					<li class="list"><a href="16personality.html">ISFJ - "The Protectors"</a></li>
-				              </ul>
-				          </li>
-				          <li class="list firstList"><a href="16personality.html">Rational</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="16personality.html">ENTJ - "The Fieldmarshals</a></li>
-              					<li class="list"><a href="16personality.html">INTJ - "The Masterminds"</a></li>
-              					<li class="list"><a href="16personality.html">ENTP - "The Inventors"</a></li>
-              					<li class="list"><a href="16personality.html">INTP - "The Architects"</a></li>
-          				    </ul>
-          				</li>    
-				          <li class="list firstList"><a href="16personality.html">Idealist</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="16personality.html">ENFJ - "The Teachers"</a></li>
-              					<li class="list"><a href="16personality.html">INFJ - "The Counselors"</a></li>
-              					<li class="list"><a href="16personality.html">ENFP - "The Champions"</a></li>
-              					<li class="list"><a href="16personality.html">INFP - "The Healers"</a></li>
-          				    </ul>
-          				</li>
-				          <li class="list firstList"><a href="#">Artisan</a>
-                      <ul class="dropdown">
-              					<li class="list"><a href="16personality.html">ESTP - "The Promoters"</a></li>
-              					<li class="list"><a href="16personality.html">ISTP - "The Crafters"</a></li>
-              					<li class="list"><a href="16personality.html">ESFP - "The Performers"</a></li>
-              					<li class="list"><a href="16personality.html">ISFP - "The Composers"</a></li>
-          				    </ul>
-          				</li>
-          			</ul>	
-              </li>
-            </ul>--> 
-        
-  
         <!-- Page Title -->
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Custom Assessments</h1>
-					</div>
-				</div>
-			</div>
-		</div>
+    		<div class="section section-breadcrumbs">
+    			<div class="container">
+    				<div class="row">
+    					<div class="col-md-12">
+    						<h1>Custom Assessments </h1>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
 		
 
         <!-- Page Information - MBTI Graphical Result-->
@@ -127,7 +113,7 @@
 				<div class="row">
 				    <div class="col-sm-12">
 						<h2>List of all available Assessments </h2>
-											
+										
 					</div>
 				</div>
 			</div>
@@ -139,40 +125,7 @@
               <?php include('cstomTest.php'); ?>
             </div> 
             <!-- Developed by Ashwani -->
-<!-- 
-<?php
-session_start();
 
-$conn = mysql_connect('localhost', 'root', '');
-mysql_select_db('library', $conn);
-
-if(isset($_POST['bookID']))
-{
-    $bookID = $_POST['bookID'];
-
-    $result = mysql_query("INSERT INTO borrowing (UserID, BookID, Returned) VALUES ('".$_SESSION['userID']."', '".$bookID."', '3')", $conn);
-
-    if ($result)
-        echo "Book #" + $bookId + " has been reserved.";
-    else
-        echo "An error message!";
-}
-?>
-
-
-            <div>
-            <form method="post" action="">
-              <?php include('index1.php'); ?>
-              <?php include('submit_asmt.php'); ?> 
-            </form>
-          </div> 
-          
-           Javascripts needed?
-            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-            <script src="../jQuery/site.js"></script>
-            -->
-            
 	    <!-- Footer -->
 	    <div class="footer">
 	    	<div class="container">

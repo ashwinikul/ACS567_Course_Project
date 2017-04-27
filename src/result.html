@@ -1,65 +1,148 @@
-<!DOCTYPE html> 
-<html>
-    <head>
-        <title>Welcome to Know Thyself Website</title>
-        <link type="text/css" href="css/result.css" rel="stylesheet">
-    </head> 
-        <body onload="phpLoad();" background="images/result.gif" class = "result">
-            <ul>
-              <li><a href="home.html">About MBTI</a></li>
-              <li><a href="assessment.html" data-target="index1" class="tagline">Assessment</a></li>
-              <li><a href="custom.html">Customized Tests</a></li>
-              <li><a href="questionnaire.html">Questionnaire</a></li>
-              <li class="dropdown"><a href="g" class="dropbtn">16 Personality Types</a>
-                <div class="dropdown-content">
-                  <a href="#">Guardian</a>
-                      <ul>
-    					<li><a href="#">ESTJ - "The Supervisors"</a></li>
-    					<li><a href="#">ISTJ - "The Inspectors"</a></li>
-    					<li><a href="#">ESFJ - "The Providers"</a></li>
-    					<li><a href="#">ISFJ - "The Protectors"</a></li>
-				      </ul>
-                  <a href="#">Rational</a>
-                      <ul>
-    					<li><a href="#">ENTJ - "The Fieldmarshals</a></li>
-    					<li><a href="#">INTJ - "The Masterminds"</a></li>
-    					<li><a href="#">ENTP - "The Inventors"</a></li>
-    					<li><a href="#">INTP - "The Architects"</a></li>
-				      </ul>
-                  <a href="#">Idealist</a>
-                      <ul>
-    					<li><a href="#">ENFJ - "The Teachers"</a></li>
-    					<li><a href="#">INFJ - "The Counselors"</a></li>
-    					<li><a href="#">ENFP - "The Champions"</a></li>
-    					<li><a href="#">INFP - "The Healers"</a></li>
-				      </ul>
-                  <a href="#">Artisan</a>
-                      <ul>
-    					<li><a href="#">ESTP - "The Promoters"</a></li>
-    					<li><a href="#">ISTP - "The Crafters"</a></li>
-    					<li><a href="#">ESFP - "The Performers"</a></li>
-    					<li><a href="#">ISFP - "The Composers"</a></li>
-				      </ul>
-                </div>
-              </li>
-            </ul>
-            <div id="res" data-target="testresult" onload="phpLoad();"  >
-              <?php include('testresult.php'); ?>
-              
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Welcome to Know Thyself Website</title>
+   
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Our CSS-->
+    <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+    
+    <!-- Bootstrap template CSS-->
+  	<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css" >
+	
+	  <script src="//use.edgefonts.net/bebas-neue.js"></script>
+	
+    <!-- Bootstrap Custom Fonts & Icons -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+	
+  	<script src="jQuery/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	
+    <!-- Sindu js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  </head> 
+       
+  <body onload="phpLoad();" background="images/result.gif" class = "result" id="pdf">
+
+    <!--/header navigation bar-->
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.html"><img src="images/logo.png" alt="Know Thyself" height="130%"></a>
             </div>
-            
-            <script <script type="text/javascript" src="js/phpload.js"></script>
-           
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="home.html">About MBTI</a></li>
+                    <li><a href="assessment.html">Assessment</a></li>
+                    <li><a href="questionnaire.html">Questionnaire</a></li>
+                    <li><a href="CustomTest.html">Custom Assessments</a></li>
+                    <li class="dropdown"><a tabindex="5" href="16personality.html" class="dropdown-toggle" data-toggle="dropdown">16 Personality Types<i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu"><a href="16personality.html">Guardian</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ESTJ">ESTJ</a></li>
+                                  <li><a href="16personality.html#ISTJ">ISTJ</a></li>
+                                  <li><a href="16personality.html#ESFJ">ESFJ</a></li>
+                                  <li><a href="16personality.html#ISFJ">ISFJ</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">The Rationals</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ENTJ">ENTJ</a></li>
+                                  <li><a href="16personality.html#INTJ">INTJ</a></li>
+                                  <li><a href="16personality.html#ENTP">ENTP</a></li>
+                                  <li><a href="16personality.html#INTP">INTP</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">Idealist</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ENFJ">ENFJ</a></li>
+                                  <li><a href="16personality.html#INFJ">INFJ</a></li>
+                                  <li><a href="16personality.html#ENFP">ENFP</a></li>
+                                  <li><a href="16personality.html#INFP">INFP</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu"><a href="16personality.html">Artisan</a>
+                                <ul class="dropdown-menu">
+                                  <li><a href="16personality.html#ESTP">ESTP</a></li>
+                                  <li><a href="16personality.html#ISTP">ISTP</a></li>
+                                  <li><a href="16personality.html#ESFP">ESFP</a></li>
+                                  <li><a href="16personality.html#ISFP">ISFP</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+        <!-- Page Title -->
+    		<div class="section section-breadcrumbs">
+    			<div class="container">
+    				<div class="row">
+    					<div class="col-md-12">
+    						<h1>Your Assessment Results!</h1>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+		
+        <!-- Page Information - MBTI Graphical Result-->
+        <div class="section">
+	    	<div class="container">
+				<div class="row">
+				    <div class="col-sm-12">
+					    <div id="res" data-target="testresult" onload="phpLoad();" >
+                          <?php include('testresult.php'); ?>
+              </div> 	
+					</div>
+				</div>
+			</div>
+		</div>
+
+	    <!-- Footer -->
+	    <div class="footer">
+	    	<div class="container">
+		    	<div class="row">
+		    		<div class="col-md-12">
+		    			<div class="footer-copyright">&copy; 2017 Know Thyself Project - ACS567</div>
+		    		</div>
+		    	</div>
+		    </div>
+	    </div>
+	    
+          <!-- Javascripts -->
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="jQuery/jquery-1.9.1.min.js"><\/script>')</script>
+          <script src="jQuery/bootstrap.min.js"></script>
+            		
+          <!-- Scrolling Nav JavaScript -->
+          <script src="jQuery/jquery.easing.min.js"></script>
+          <script src="jQuery/scrolling-nav.js"></script>	
+          
+          <!-- Sindu JavaScript -->
             <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
             <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-
-              
             
-            
-            
+          <!-- Ashwini JS-->  
+            <script src="jQuery/phpload.js"></script>
         </body>
 </html> 
+
